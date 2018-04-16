@@ -1,0 +1,105 @@
+html,
+body {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #525454;
+}
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  height: 100%;
+  padding: 0;
+}
+
+.left-box {
+  background: #fff;
+  border-radius: 3px;
+  padding: 10px;
+  text-align: left;
+  width: 30%;
+  height: 100%;
+  max-width: 320px;
+  min-width: 200px;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+
+input {
+  font-size: 12px;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+li {
+	padding: 8px 16px;
+	border-bottom: 1px solid #eee;
+}
+
+#filter-text {
+  width: 80%;
+}
+
+#place-list {
+  font-size: 1em;
+}
+
+.w0 {
+  width: 0;
+}
+
+.right-box {
+  /*display: flex;*/
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.banner {
+  height: 60px;
+  background-color: #000;
+}
+
+.v-center {
+  vertical-align: center;
+}
+
+#map {
+  height: 100%;
+}
+
+#fs-info {
+  font-size: 10px;
+}
+
+.icon {
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+@media (max-width: 635px) {
+  .left-box {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .container {
+    display: block;
+    height: 100%;
+    padding: 0;
+  }
+}

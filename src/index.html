@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--(if target dist)>
+      <link rel="stylesheet" href="app.css">
+    <!(endif)-->
+    <!--(if target dummy)>
+      <link rel="stylesheet" href="css/styles.css">
+    <!(endif)-->
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="left-box" data-bind="visible: leftBoxVisible">
+        <h1>Neighborhood Funs to Visit</h1>
+        <div class="filter-box">
+          <input id="filter-text" type="text" placeholder="Enter key word of places to filter places!"
+            data-bind="value: filterQuery, valueUpdate: 'afterkeydown'" autocomplete="off">
+          <input id="filter-btn" type="button" value="filter">
+        </div>
+        <div id="list-box">
+          <ul class="place-list"
+            data-bind="foreach: filteredPlaces">
+            <li data-bind="text: title,
+              click: $parent.placeItemClickHandler"></li>
+          </ul>
+        </div>
+      </div>
+      <div class='right-box'>
+        <div class="banner">
+          <p>
+            <i id="hamb" class="fa fa-bars fa-lg v-center fa-fw fa-rotate-90"
+              data-bind="click: toggle, css: { 'fa-rotate-90': leftBoxVisible}">
+            </i>
+          <p>
+        </div>
+        <div id="map">
+        </div>
+      </div>
+    </div>
+
+    <!--(if target dist)>
+      <script src="app.min.js"></script>
+    <!(endif)-->
+    <!--(if target dummy)>
+      <script src="../node_modules/knockout/build/output/knockout-latest.js"
+        type="text/javascript"></script>
+      <script src="js/script.js"></script>
+    <!(endif)-->
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7RFA0KNstvobvdBbCpVTN64moCBTG9Qw&libraries=places,drawing,geometry&v=3&callback=initMap"
+      onerror="googleMapError()">
+    </script>
+  </body>
+</html>
